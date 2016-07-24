@@ -10,7 +10,7 @@
 			//seri
 			$('#make_seri_'+id).show();
 			//related
-			$('#make_related_'+id).show();
+			// $('#make_related_'+id).show();
 		} else {
 			//type main
 			if($('input[name="type_main_id"]').val() == id) {
