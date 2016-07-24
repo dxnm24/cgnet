@@ -2,7 +2,7 @@
 	$(function () {
 		
 	});
-	function checkGameType(id)
+	function checkGameType(id, check=1)
 	{
 		if($('#type_id_'+id).is(':checked')) {
 			//type main
@@ -29,22 +29,28 @@
 				$('input[name="related"]').val('');
 			}
 			$('#related_'+id).hide();
-			$('#make_related_'+id).hide();
+			// $('#make_related_'+id).hide();
+			$('#make_related_'+id).show();
 		}
 		return;
 	}
-	function checkKey(id, $key, $name)
+	function checkKey(id, key, name, check=1)
 	{
 		$('.game-type-list').each(function(index){
 			var $li = $(this);
 			type_id = $li.find('.type_id');
-			if(type_id.is(':checked')) {
-				$li.find('.'+$key).hide();
-				$li.find('.make_'+$key).show();
+			if(check === 1) {
+				if(type_id.is(':checked')) {
+					$li.find('.'+key).hide();
+					$li.find('.make_'+key).show();
+				}
+			} else {
+				$li.find('.'+key).hide();
+				$li.find('.make_'+key).show();
 			}
 		});
-		$('input[name="'+$name+'"]').val(id);
-		$('#'+$key+'_'+id).show();
-		$('#make_'+$key+'_'+id).hide();
+		$('input[name="'+name+'"]').val(id);
+		$('#'+key+'_'+id).show();
+		$('#make_'+key+'_'+id).hide();
 	}
 </script>

@@ -58,11 +58,17 @@ class CommonGame
 		return '';
 	}
 	//check type box
-	static function issetMakeDisplay($gameId, $makeId, $typeId)
+	static function issetMakeDisplay($gameId, $makeId, $typeId, $issetCheck = true)
 	{
-		$check = self::issetGameType($gameId, $typeId);
-		if($check == true && $makeId != $typeId) {
-			return '';
+		if($issetCheck == true) {
+			$check = self::issetGameType($gameId, $typeId);
+			if($check == true && $makeId != $typeId) {
+				return '';
+			}
+		} else {
+			if($makeId != $typeId) {
+				return '';
+			}
 		}
 		return 'display: none;';
 	}

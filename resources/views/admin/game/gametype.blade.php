@@ -19,7 +19,7 @@
 						<small class="label label-success seri" id="seri_{{ $value->id }}" style="display: none;"><i class="fa fa-key"></i> Seri</small>
 						<small class="make_seri" id="make_seri_{{ $value->id }}" onclick="checkKey({{ $value->id }}, 'seri', 'seri');" style="cursor: pointer; display: none;"> Seri</small>
 						<small class="label label-success related" id="related_{{ $value->id }}" style="display: none;"><i class="fa fa-key"></i> Related</small>
-						<small class="make_related" id="make_related_{{ $value->id }}" onclick="checkKey({{ $value->id }}, 'related', 'related');" style="cursor: pointer; display: none;"> Related</small>
+						<small class="make_related" id="make_related_{{ $value->id }}" onclick="checkKey({{ $value->id }}, 'related', 'related', 2);" style="cursor: pointer;"> Related</small>
 					</li>
 				@endforeach
 			</ul>
@@ -50,7 +50,7 @@
 						<small class="label label-success seri" id="seri_{{ $value->id }}" style="<?php echo CommonGame::issetCheckedDisplay($data->seri, $value->id); ?>"><i class="fa fa-key"></i> Seri</small>
 						<small class="make_seri" id="make_seri_{{ $value->id }}" onclick="checkKey({{ $value->id }}, 'seri', 'seri');" style="cursor: pointer; <?php echo CommonGame::issetMakeDisplay($data->id, $data->seri, $value->id); ?>">Seri</small>
 						<small class="label label-success related" id="related_{{ $value->id }}" style="<?php echo CommonGame::issetCheckedDisplay($data->related, $value->id); ?>"><i class="fa fa-key"></i> related</small>
-						<small class="make_related" id="make_related_{{ $value->id }}" onclick="checkKey({{ $value->id }}, 'related', 'related');" style="cursor: pointer; <?php echo CommonGame::issetMakeDisplay($data->id, $data->related, $value->id); ?>">Related</small>
+						<small class="make_related" id="make_related_{{ $value->id }}" onclick="checkKey({{ $value->id }}, 'related', 'related', 2);" style="cursor: pointer; <?php echo CommonGame::issetMakeDisplay($data->id, $data->related, $value->id, false); ?>">Related</small>
 					</li>
 				@endforeach
 			</ul>
