@@ -1,6 +1,6 @@
 <?php 
 	if(isset($isHotOrNew)) {
-		$metaPrefix = $type->name.' ';
+		$metaPrefix = $type->name.' | ';
 	} else {
 		$metaPrefix = '';
 	}

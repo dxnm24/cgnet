@@ -178,6 +178,7 @@ class SiteController extends Controller
         $latestSlug = strpos($slug, '-moi-nhat');
         $hotestSlug = strpos($slug, '-hay-nhat');
         if($latestSlug !== false || $hotestSlug !== false) {
+            $isHotOrNew = null;
             $typeSlug = substr($slug, 0, -9);
             $type = $this->getGameTypeBySlug($typeSlug);
             if(isset($type)) {
@@ -197,10 +198,10 @@ class SiteController extends Controller
                 $total = count($data);
                 if($total > 0) {
                     //put cache
-                    $html = view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate])->render();
+                    $html = view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate, 'isHotOrNew' => $isHotOrNew])->render();
                     Cache::forever($cacheName, $html);
                     //return view
-                    return view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate]);
+                    return view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate, 'isHotOrNew' => $isHotOrNew]);
                 }
             }
         }
