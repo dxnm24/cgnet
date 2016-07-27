@@ -185,11 +185,13 @@ class SiteController extends Controller
                     $data = $this->getGameByRelationsQuery('type', $type->id)->paginate(PAGINATE);
                     $type->name = $type->name.' mới nhất';
                     $type->slug = $type->slug.'-moi-nhat';
+                    $isHotOrNew = 1;
                 }
                 if($hotestSlug !== false) {
                     $data = $this->getGameByRelationsQuery('type', $type->id, 'view', 'desc')->paginate(PAGINATE);
                     $type->name = $type->name.' hay nhất';
                     $type->slug = $type->slug.'-hay-nhat';
+                    $isHotOrNew = 1;
                 }
                 $paginate = 1;
                 $total = count($data);

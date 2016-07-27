@@ -1,7 +1,7 @@
 @include('site.common.head')
 <body>
 
-<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <div class="off-canvas-wrapper">
 	<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
@@ -69,6 +69,6 @@
 	</div>
 </div>
 
-<script src="{{ elixir('js/all.js') }}"></script>
+<script src="{{ asset('js/all.js') }}"></script>
 </body>
 </html>
