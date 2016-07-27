@@ -9,13 +9,13 @@
 	<meta name="robots" content="noodp,index,follow" />
 	<meta name="language" content="vietnamese" />
 	<meta name="distribution" content="global">
-	<meta name="title" content="{{ $game->meta_title }}">
-	<meta name="keywords" content="{{ $game->meta_keyword }}">
-	<meta name="description" content="{{ $game->meta_description }}">
+	<meta name="title" content="{!! $game->meta_title !!}">
+	<meta name="keywords" content="{!! $game->meta_keyword !!}">
+	<meta name="description" content="{!! $game->meta_description !!}">
 	<meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" name="viewport">
 	<link rel="icon" href="{{ url('img/favicon.png') }}" type="image/x-icon">
-	<title>{{ $game->name }}</title>
+	<title>{!! $game->name !!}</title>
 	{!! GA !!}
 	<link rel="stylesheet" type="text/css" href="{{ url('css/play.css') }}">
 	<script type="text/javascript" src="{{ url('js/jquery.min.js') }}"></script>

@@ -21,7 +21,7 @@
 			@if($topmenu)
 			<ul class="menu show-for-medium menu-pc">
 				@foreach($topmenu as $key => $value)
-					<li {{ checkCurrent(url($value->url)) }}><a href="{{ CommonUrl::getUrl($value->url) }}">{{ $value->name }}</a></li>
+					<li {{ checkCurrent(url($value->url)) }}><a href="{{ CommonUrl::getUrl($value->url) }}">{!! $value->name !!}</a></li>
 				@endforeach
 			</ul>
 			@endif

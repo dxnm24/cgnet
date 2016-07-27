@@ -15,14 +15,14 @@
 	<div class="column">
 		<div class="callout item">
 			<!-- 400x370 -->
-			<a href="{{ $url }}" title="{{ $value->name }}"{{ $seriClass }}>
+			<a href="{{ $url }}" title="{!! $value->name !!}"{{ $seriClass }}>
 				@if($checkSeri == true)
-				<span><img src="{{ $value->image }}" alt="{{ $value->name }}" title="{{ $value->name }}"></span>
+				<span><img src="{{ $value->image }}" alt="{!! $value->name !!}" title="{!! $value->name !!}"></span>
 				@else
-				<img src="{{ $value->image }}" alt="{{ $value->name }}" title="{{ $value->name }}">
+				<img src="{{ $value->image }}" alt="{!! $value->name !!}" title="{!! $value->name !!}">
 				@endif
 			</a>
-			<h2><a href="{{ $url }}" title="{{ $value->name }}">{{ $value->name }}</a></h2>
+			<h2><a href="{{ $url }}" title="{!! $value->name !!}">{!! $value->name !!}</a></h2>
 		</div>
 	</div>
 	@endforeach

@@ -2,7 +2,6 @@
 <body>
 
 <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-<!-- <link rel="stylesheet" href="./node_modules/motion-ui/dist/motion-ui.css" /> -->
 
 <div class="off-canvas-wrapper">
 	<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
@@ -14,7 +13,7 @@
 	      		<li class="title">Thể loại game</li>
 	      		@if($topmenu)
 		      		@foreach($topmenu as $key => $value)
-						<li {{ checkCurrent(url($value->url)) }}><a href="{{ $value->url }}">{{ $value->name }}</a></li>
+						<li {{ checkCurrent(url($value->url)) }}><a href="{{ $value->url }}">{!! $value->name !!}</a></li>
 					@endforeach
 				@endif
 	      	</ul>
@@ -27,7 +26,7 @@
 	      		<li class="title">Games</li>
 	      		@if($sidemenu)
 		      		@foreach($sidemenu as $key => $value)
-						<li {{ checkCurrent(url($value->url)) }}><a href="{{ $value->url }}">{{ $value->name }}</a></li>
+						<li {{ checkCurrent(url($value->url)) }}><a href="{{ $value->url }}">{!! $value->name !!}</a></li>
 					@endforeach
 				@endif
 	      	</ul>

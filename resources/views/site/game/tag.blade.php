@@ -39,12 +39,12 @@
 		@include('site.common.breadcrumb', $breadcrumb)
 	</div>
 	<div class="row column box-title">
-		<h1>{{ $h1 }}</h1>
+		<h1>{!! $h1 !!}</h1>
 	</div>
 	@if($tag->summary != '' || $tag->description != '')
 	<div class="row column">
 		@if($tag->summary != '')
-		<p class="summary">{{ $tag->summary }}</p>
+		<p class="summary">{!! $tag->summary !!}</p>
 		@endif
 		@if($tag->description != '')
 		<div class="description">{!! $tag->description !!}</div>

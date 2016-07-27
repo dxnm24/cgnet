@@ -5,11 +5,11 @@
 		@foreach($breadcrumb as $value)
 			@if($value['link'])
 				<li>
-					<a href="{{ $value['link'] }}">{{ $value['name'] }}</a>
+					<a href="{{ $value['link'] }}">{!! $value['name'] !!}</a>
 				</li>
 			@else
 				<li>
-					<span class="show-for-sr">Current: </span> {{ $value['name'] }}
+					<span class="show-for-sr">Current: </span> {!! $value['name'] !!}
 				</li>
 			@endif
 		@endforeach

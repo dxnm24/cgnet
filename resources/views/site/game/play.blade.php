@@ -44,7 +44,7 @@
 		@include('site.common.breadcrumb', $breadcrumb)
 	</div>
 	<div class="row column box-title game-title">
-		<h1>{{ $h1 }}</h1>
+		<h1>{!! $h1 !!}</h1>
 	</div>
 	@if($device == MOBILE)
 	<div class="row column">
@@ -65,9 +65,9 @@
 			<div class="content">
 				<div class="info">
 					<div class="row">
-						<div class="medium-2 small-3 columns"><img src="{{ $game->image }}" alt="{{ $game->name }}" /></div>
+						<div class="medium-2 small-3 columns"><img src="{{ $game->image }}" alt="{!! $game->name !!}" /></div>
 						<div class="medium-10 small-9 columns">
-							<p class="summary">{{ $game->summary }}</p>
+							<p class="summary">{!! $game->summary !!}</p>
 							<p class="view"><span>Lượt chơi:</span> {{ number_format(getZero($game->view, 0, '.', '.')) }}</p>
 							@if($device == PC)
 								@include('site.common.social')
@@ -93,7 +93,7 @@
 					<div class="tags-icon"><i class="fa fa-tags" aria-hidden="true"></i> Danh mục</div>
 					<ul>
 						@foreach($tags as $value)
-						<li><h2><a href="{{ CommonUrl::getUrlGameTag($value->slug) }}" title="{{ $value->name }}">{{ $value->name }}</a></h2></li>
+						<li><h2><a href="{{ CommonUrl::getUrlGameTag($value->slug) }}" title="{!! $value->name !!}">{!! $value->name !!}</a></h2></li>
 						@endforeach
 					</ul>
 				</div>

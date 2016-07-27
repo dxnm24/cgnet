@@ -8,7 +8,7 @@
 ?>
 <div class="gametypes">
 	<div class="row column box-title no-padding-bottom">
-		<h3>{{ $data->name }}</h3>
+		<h3>{!! $data->name !!}</h3>
 		<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only hvr-icon-wobble-horizontal hvr-buzz-out">Xem thêm</a>
 	</div>
 	<div class="box-inner">

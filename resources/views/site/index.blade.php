@@ -31,7 +31,7 @@
 			@if(count($value->games2) == 0)
 			<div class="box">
 				<div class="row column box-title no-padding-bottom">
-					<h3>{{ $value->name }}</h3>
+					<h3>{!! $value->name !!}</h3>
 					<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only hvr-icon-wobble-horizontal hvr-buzz-out">Xem thêm</a>
 				</div>
 				<div class="box-inner">
@@ -45,10 +45,10 @@
 			<div class="box">
 				<ul class="box-tabs clearfix" data-tabs id="box-tabs-{{ $value->id }}">
 					<li class="tabs-title is-active">
-						<h3><a href="#{{ $value->slug.'-moi-nhat' }}" aria-selected="true">{{ $value->name }} mới nhất</a></h3>
+						<h3><a href="#{{ $value->slug.'-moi-nhat' }}" aria-selected="true">{!! $value->name !!} mới nhất</a></h3>
 					</li>
 					<li class="tabs-title">
-						<h3><a href="#{{ $value->slug.'-hay-nhat' }}">{{ $value->name }} hay nhất</a></h3>
+						<h3><a href="#{{ $value->slug.'-hay-nhat' }}">{!! $value->name !!} hay nhất</a></h3>
 					</li>
 				</ul>
 				<div class="box-inner" data-tabs-content="box-tabs-{{ $value->id }}">
