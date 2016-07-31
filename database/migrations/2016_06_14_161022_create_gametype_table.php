@@ -28,6 +28,7 @@ class CreateGametypeTable extends Migration
             $table->string('meta_description');
             $table->string('meta_image');
             $table->string('limited')->default(PAGINATE_BOX);
+            $table->string('sort_by')->default('start_date');
             $table->integer('home')->default(ACTIVE);
             $table->integer('type')->default(ACTIVE);
             $table->integer('status')->default(ACTIVE);

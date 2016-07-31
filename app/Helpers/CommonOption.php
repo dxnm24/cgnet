@@ -86,4 +86,18 @@ class CommonOption
         $array = self::adPositionArray();
         return $array[$adPosition];
     }
+    //sort by game type
+    static function gameSortByArray()
+    {
+        return array(
+            'start_date' => 'Mặc định (Ngày đăng giảm dần)',
+            'view' => 'Lượt chơi giảm dần',
+
+        );
+    }
+    static function getGameSortBy($sortBy)
+    {
+        $array = self::gameSortByArray();
+        return $array[$sortBy];
+    }
 }

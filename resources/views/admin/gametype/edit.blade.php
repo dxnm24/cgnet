@@ -73,6 +73,15 @@
 							</div>
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="sort_by">Sắp xếp</label>
+						<p>Kiểu sắp xếp danh sách games (trang chủ)</p>
+						<div class="row">
+							<div class="col-sm-8">
+							{!! Form::select('sort_by', CommonOption::gameSortByArray(), $data->sort_by, array('class' =>'form-control')) !!}
+							</div>
+						</div>
+					</div>
 					
 					@include('admin.common.inputStatusLang', array('isEdit' => true))
 					@include('admin.common.inputContent', array('isEdit' => true))

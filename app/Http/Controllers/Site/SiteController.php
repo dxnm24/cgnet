@@ -22,7 +22,7 @@ class SiteController extends Controller
         }
         //query
         $data = DB::table('game_types')
-            ->select('id', 'name', 'slug', 'type', 'limited')
+            ->select('id', 'name', 'slug', 'type', 'limited', 'sort_by')
             ->where('status', ACTIVE)
             ->where('home', ACTIVE)
             ->whereNull('deleted_at')
@@ -49,7 +49,7 @@ class SiteController extends Controller
                         $gametypes = $this->getGameByTypeQuery($value->id)->take($limit)->get();
                         // $gametypes_sortbyview = $this->getGameByTypeQuery($value->id, 'view')->take($limit)->get();
                     } else {
-                        $gametypes = $this->getGameByRelationsQuery('type', $value->id)->take($limit)->get();
+                        $gametypes = $this->getGameByRelationsQuery('type', $value->id, $value->sort_by)->take($limit)->get();
                         // $gametypes_sortbyview = null;
                     }
                     $value->games = collect($types)->merge($gametypes);
@@ -72,7 +72,7 @@ class SiteController extends Controller
                         $value->games = $this->getGameByTypeQuery($value->id)->take($typeLimit)->get();
                         $value->games2 = $this->getGameByTypeQuery($value->id, 'view')->take($typeLimit)->get();
                     } else {
-                        $value->games = $this->getGameByRelationsQuery('type', $value->id)->take($typeLimit)->get();
+                        $value->games = $this->getGameByRelationsQuery('type', $value->id, $value->sort_by)->take($typeLimit)->get();
                         $value->games2 = [];
                     }
                 }
