@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="small-3 columns">
 				<div class="logo">
-					<a href="/"><img src="/img/logo.png" alt="" /></a>
+					<a href="/"><img src="/img/logo.png" alt="choigames.net" /></a>
 				</div>
 			</div>
 			<div class="small-9 columns">
