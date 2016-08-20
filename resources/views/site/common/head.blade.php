@@ -18,6 +18,7 @@
 	<meta property="og:title" content="{!! $meta_title !!}" />
 	<meta property="og:description" content="{!! $meta_description !!}" />
 	<meta property="og:image" content="{!! $meta_image !!}" />
+	<meta property="fb:app_id" content="{{ FACEBOOK_APPID }}" />
 	<link rel="icon" href="{!! url('img/favicon.png') !!}" type="image/x-icon">
 	<title>@yield('title')</title>
 	{!! GA !!}

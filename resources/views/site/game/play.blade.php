@@ -99,6 +99,8 @@
 				</div>
 				@endif
 
+				<div class="fb-comments" data-numposts="5"></div>
+
 				@include('site.game.related', ['data' => $seri, 'gameData' => $gameSeries, 'dataSeri' => $seriParent])
 				@include('site.game.related', ['data' => $typeMain, 'gameData' => $gameTypes])
 				@include('site.game.related', ['data' => $related, 'gameData' => $gameRelated])
