@@ -2,6 +2,7 @@ vendor/
 node_modules/
 public/game-flash
 public/game-html5
+public/game-html5-zip
 public/images
 public/thumbs
 
