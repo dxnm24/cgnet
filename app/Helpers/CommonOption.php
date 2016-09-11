@@ -76,8 +76,10 @@ class CommonOption
             2 => 'Header - Mobile',
             3 => 'Footer - PC',
             4 => 'Footer - Mobile',
-            5 => 'Preroll - PC',
-            6 => 'Preroll - Mobile',
+            5 => 'Preroll (QC trên khung chơi game) - PC',
+            6 => 'Preroll (QC trên khung chơi game)- Mobile',
+            7 => 'Dưới menu phải - PC',
+            8 => 'Dưới menu phải - Mobile',
             
         );
     }

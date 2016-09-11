@@ -79,6 +79,7 @@
 						</div>
 						<div class="medium-3 columns hide-for-small-only">
 							@include('site.common.side')
+							@include('site.common.ad', ['posPc' => 7, 'posMobile' => 8])
 						</div>
 					</div>
 				@endif
@@ -89,6 +90,6 @@
 	</div>
 </div>
 
-<script src="{{ asset('js/all.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
