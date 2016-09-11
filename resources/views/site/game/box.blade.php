@@ -17,9 +17,9 @@
 			<!-- 400x370 -->
 			<a href="{{ $url }}" title="{!! $value->name !!}"{{ $seriClass }}>
 				@if($checkSeri == true)
-				<span><img alt="{!! $value->name !!}" title="{!! $value->name !!}" data-src="{{ $value->image }}" class="lazyload"></span>
+				<span><img alt="{!! $value->name !!}" title="{!! $value->name !!}" data-src="{{ url($value->image) }}" class="lazyload"></span>
 				@else
-				<img alt="{!! $value->name !!}" title="{!! $value->name !!}" data-src="{{ $value->image }}" class="lazyload">
+				<img alt="{!! $value->name !!}" title="{!! $value->name !!}" data-src="{{ url($value->image) }}" class="lazyload">
 				@endif
 			</a>
 			<h2><a href="{{ $url }}" title="{!! $value->name !!}">{!! $value->name !!}</a></h2>

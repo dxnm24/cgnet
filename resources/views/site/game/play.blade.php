@@ -65,7 +65,7 @@
 			<div class="content">
 				<div class="info">
 					<div class="row">
-						<div class="medium-2 small-3 columns"><img src="{{ $game->image }}" alt="{!! $game->name !!}" /></div>
+						<div class="medium-2 small-3 columns"><img src="{{ url($game->image) }}" alt="{!! $game->name !!}" /></div>
 						<div class="medium-10 small-9 columns">
 							<p class="summary">{!! $game->summary !!}</p>
 							<p class="view"><span>Lượt chơi:</span> {{ number_format(getZero($game->view, 0, '.', '.')) }}</p>
