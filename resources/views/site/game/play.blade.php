@@ -93,7 +93,7 @@
 					<div class="tags-icon"><i class="fa fa-tags" aria-hidden="true"></i> Danh mục</div>
 					<ul>
 						@foreach($tags as $value)
-						<li><h2><a href="{{ CommonUrl::getUrlGameTag($value->slug) }}" title="{!! $value->name !!}">{!! $value->name !!}</a></h2></li>
+						<li><h2><a href="{{ url('tag/'.$value->slug) }}" title="{!! $value->name !!}">{!! $value->name !!}</a></h2></li>
 						@endforeach
 					</ul>
 				</div>

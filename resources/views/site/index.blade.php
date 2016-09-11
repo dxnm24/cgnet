@@ -27,7 +27,7 @@
 @if(count($data) > 0)
 	@foreach($data as $key => $value)
 		@if(count($value->games) > 0)
-			<?php $url = CommonUrl::getUrl($value->slug); ?>
+			<?php $url = url($value->slug); ?>
 			@if(count($value->games2) == 0)
 			<div class="box">
 				<div class="row column box-title no-padding-bottom">

@@ -5,11 +5,11 @@
 		if(isset($data->seri) && $data->seri == ACTIVE) {
 			$checkSeri = true;
 			$seriClass = ' class=seri';
-			$url = CommonUrl::getUrl2($type->slug, $value->slug);
+			$url = url($type->slug.'/'.$value->slug);
 		} else {
 			$checkSeri = false;
 			$seriClass = '';
-			$url = CommonUrl::getUrl($value->slug);
+			$url = url($value->slug);
 		}
 	?>
 	<div class="column">

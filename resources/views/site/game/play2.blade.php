@@ -27,7 +27,7 @@
 <div id="menubox" style="display: none;">
 	<ul>
 		<li><a class="menubox-home" href="/">Trang chủ</a></li>
-		<li><a class="menubox-reload" href="{{ CommonUrl::getUrl($game->slug).'?play=true' }}">Tải lại game</a></li>
+		<li><a class="menubox-reload" href="{{ url($game->slug).'?play=true' }}">Tải lại game</a></li>
 		<li><a class="menubox-back" onclick="window.history.go(-1);return false;">Quay lại trang trước</a></li>
 		<li><a class="menubox-close" id="menuhide">Đóng Menu</a></li>
 	</ul>
