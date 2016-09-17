@@ -191,7 +191,10 @@ class GameTypeController extends Controller
      */
     public function destroy($id)
     {
-        $games = Game::where('type_main_id', $id)->orWhere('seri', $id)->first();
+        $games = Game::where('type_main_id', $id)
+            ->orWhere('seri', $id)
+            ->whereNull('deleted_at')
+            ->first();
         if(isset($games)) {
             return redirect()->route('admin.gametype.index')->with('warning', 'Không thể xóa vì có game trong thể loại này!'); 
         }
