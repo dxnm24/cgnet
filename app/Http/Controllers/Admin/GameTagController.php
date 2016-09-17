@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\GameTag;
+use App\Models\GameTagRelation;
 use DB;
 use Validator;
 use Illuminate\Support\Facades\Auth;
@@ -174,6 +175,7 @@ class GameTagController extends Controller
     public function destroy($id)
     {
         $data = GameTag::find($id);
+        GameTagRelation::where('tag_id', $id)->delete();
         $data->delete();
         Cache::flush();
         return redirect()->route('admin.gametag.index')->with('success', 'Xóa thành công');   

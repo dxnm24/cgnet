@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\GameType;
+use App\Models\Game;
 use DB;
 use Validator;
 use Illuminate\Support\Facades\Auth;
@@ -190,10 +191,14 @@ class GameTypeController extends Controller
      */
     public function destroy($id)
     {
+        $games = Game::where('type_main_id', $id)->orWhere('seri', $id)->first();
+        if(isset($games)) {
+            return redirect()->route('admin.gametype.index')->with('warning', 'Không thể xóa vì có game trong thể loại này!'); 
+        }
         $data = GameType::find($id);
         $data->delete();
         Cache::flush();
-        return redirect()->route('admin.gametype.index')->with('success', 'Xóa thành công');   
+        return redirect()->route('admin.gametype.index')->with('success', 'Xóa thành công');
     }
 
     public function callupdate(Request $request)
