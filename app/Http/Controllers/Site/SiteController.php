@@ -324,14 +324,15 @@ class SiteController extends Controller
         //check page
         $page = ($request->page)?$request->page:1;
         //cache name
-        $cacheName = 'page_'.$slug2.'_'.$page;
+        $cacheName = 'page_'.$slug1.'_'.$slug2.'_'.$page;
         //get cache
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
         }
         //query
         $type = $this->getGameTypeBySlug($slug2, 1);
-        if(isset($type)) {
+        $typeParent = $this->getGameTypeBySlug($slug1);
+        if(isset($type) && isset($typeParent) && ($typeParent->id == $type->parent_id)) {
             $paginate = 1;
             $data = $this->getGameByRelationsQuery('type', $type->id)->paginate(PAGINATE);
             $total = count($data);
