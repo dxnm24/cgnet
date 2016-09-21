@@ -16,6 +16,10 @@ class SiteController extends Controller
     {
         //cache name
         $cacheName = 'index';
+        $device = getDevice();
+        if($device == MOBILE) {
+            $cacheName = $cacheName.'_mobile';
+        }
         //get cache
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
@@ -92,6 +96,10 @@ class SiteController extends Controller
         $page = ($request->page)?$request->page:1;
         //cache name
         $cacheName = 'tag_'.$slug.'_'.$page;
+        $device = getDevice();
+        if($device == MOBILE) {
+            $cacheName = $cacheName.'_mobile';
+        }
         //get cache
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
@@ -325,6 +333,9 @@ class SiteController extends Controller
         $page = ($request->page)?$request->page:1;
         //cache name
         $cacheName = 'page_'.$slug1.'_'.$slug2.'_'.$page;
+        if($device == MOBILE) {
+            $cacheName = $cacheName.'_mobile';
+        }
         //get cache
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
@@ -357,6 +368,10 @@ class SiteController extends Controller
         $page = ($request->page)?$request->page:1;
         //cache name
         $cacheName = 'search_'.$request->name.'_'.$page;
+        $device = getDevice();
+        if($device == MOBILE) {
+            $cacheName = $cacheName.'_mobile';
+        }
         //get cache
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
@@ -398,16 +413,21 @@ class SiteController extends Controller
     }
     private function getGameTypeQuery($id, $ids)
     {
-        return DB::table('games')
+        $data = DB::table('games')
             ->join('game_type_relations', 'games.id', '=', 'game_type_relations.game_id')
             ->select('games.id', 'games.name', 'games.slug', 'games.image')
-            ->where('game_type_relations.type_id', $id)
-            ->where('games.status', ACTIVE)
+            ->where('game_type_relations.type_id', $id);
+        $device = getDevice();
+        if($device == MOBILE) {
+            $data = $data->where('games.type', GAMEHTML5);
+        }
+        $data = $data->where('games.status', ACTIVE)
             ->where('games.start_date', '<=', date('Y-m-d H:i:s'))
             ->whereNotIn('game_type_relations.game_id', $ids)
             ->whereNull('games.deleted_at')
             ->orderBy('games.start_date', 'desc')
             ->take(PAGINATE_BOX);
+        return $data;
     }
     private function getGameTypeByParentIdQuery($id)
     {
@@ -443,24 +463,34 @@ class SiteController extends Controller
     }
     private function getGameByTypeQuery($id, $orderColumn = 'start_date', $orderSort = 'desc')
     {
-        return DB::table('games')
+        $data = DB::table('games')
             ->select('id', 'name', 'slug', 'image')
-            ->where('type_main_id', $id)
-            ->where('status', ACTIVE)
+            ->where('type_main_id', $id);
+        $device = getDevice();
+        if($device == MOBILE) {
+            $data = $data->where('type', GAMEHTML5);
+        }
+        $data = $data->where('status', ACTIVE)
             ->where('start_date', '<=', date('Y-m-d H:i:s'))
             ->whereNull('deleted_at')
             ->orderBy($orderColumn, $orderSort);
+        return $data;
     }
     private function getGameByRelationsQuery($element, $id, $orderColumn = 'start_date', $orderSort = 'desc')
     {
-        return DB::table('games')
+        $data = DB::table('games')
             ->join('game_'.$element.'_relations', 'games.id', '=', 'game_'.$element.'_relations.game_id')
             // ->join('game_'.$element.'s', 'game_'.$element.'_relations.'.$element.'_id', '=', 'game_'.$element.'s.id')
             ->select('games.id', 'games.name', 'games.slug', 'games.image')
-            ->where('game_'.$element.'_relations.'.$element.'_id', $id)
-            ->where('games.status', ACTIVE)
+            ->where('game_'.$element.'_relations.'.$element.'_id', $id);
+        $device = getDevice();
+        if($device == MOBILE) {
+            $data = $data->where('games.type', GAMEHTML5);
+        }
+        $data = $data->where('games.status', ACTIVE)
             ->where('games.start_date', '<=', date('Y-m-d H:i:s'))
             ->whereNull('games.deleted_at')
             ->orderBy('games.'.$orderColumn, $orderSort);
+        return $data;
     }
 }
