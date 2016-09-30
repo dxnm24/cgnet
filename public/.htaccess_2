@@ -5,17 +5,23 @@
 	</IfModule>
 
 	RewriteEngine On
+
+    # Redirect HTTPS to HTTP automatically
+    RewriteCond %{SERVER_PORT} ^443$ [OR]
+    RewriteCond %{HTTPS} on 
+    RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 	
 	# Redirect HTTP to HTTPS automatically
-	RewriteCond %{HTTPS} off
-	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    #RewriteCond %{SERVER_PORT} !^443$
+	#RewriteCond %{HTTPS} off
+	#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 	# redirect from www to non-www.*
-	#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-	#RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+	RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
 	
-	RewriteCond %{HTTP_HOST} ^www.%{HTTP_HOST}
-	RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI}/$1 [R=301,QSA,NC,L]
+	#RewriteCond %{HTTP_HOST} ^www.%{HTTP_HOST}
+	#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI}/$1 [R=301,QSA,NC,L]
 
 	# Redirect Trailing Slashes If Not A Folder...
 	RewriteCond %{REQUEST_FILENAME} !-d
