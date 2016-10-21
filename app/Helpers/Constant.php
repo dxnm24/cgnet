@@ -27,6 +27,7 @@ define('PAGENOTFOUND', 'Trang không tìm thấy');
 //device
 define('MOBILE', 1);
 define('PC', 2);
+define('TABLET', 3);
 //facebook id
 define('FACEBOOK_APPID', '1748503052091297');
 //google code
