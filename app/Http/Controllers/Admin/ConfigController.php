@@ -99,10 +99,13 @@ class ConfigController extends Controller
                 // 'lang' => $request->lang,
             ]);
         //cache name
-        $cacheName = 'index';
-        //get cache
-        if(Cache::has($cacheName)) {
-            Cache::forget($cacheName);
+        $cacheName1 = 'index';
+        $cacheName2 = 'index_mobile';
+        if(Cache::has($cacheName1)) {
+            Cache::forget($cacheName1);
+        }
+        if(Cache::has($cacheName2)) {
+            Cache::forget($cacheName2);
         }
         //return
         return redirect()->route('admin.config.edit', $id)->with('success', 'Sửa thành công');

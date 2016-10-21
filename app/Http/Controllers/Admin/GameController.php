@@ -136,7 +136,19 @@ class GameController extends Controller
             // insert game tag relation
             $data->gametags()->attach($request->tag_id);
         }
-        Cache::flush();
+        // Cache::flush();
+        $cacheName1 = 'page_'.$request->slug.'_1';
+        $cacheName2 = 'page_'.$request->slug.'_1_play';
+        $cacheName3 = 'page_'.$request->slug.'_1_mobile';
+        if(Cache::has($cacheName1)){
+            Cache::forget($cacheName1);
+        }
+        if(Cache::has($cacheName2)){
+            Cache::forget($cacheName2);
+        }
+        if(Cache::has($cacheName3)){
+            Cache::forget($cacheName3);
+        }
         return redirect()->route('admin.game.index')->with('success', 'Thêm thành công');
     }
 
@@ -230,7 +242,19 @@ class GameController extends Controller
         } else {
             $data->gametags()->detach();
         }
-        Cache::flush();
+        // Cache::flush();
+        $cacheName1 = 'page_'.$request->slug.'_1';
+        $cacheName2 = 'page_'.$request->slug.'_1_play';
+        $cacheName3 = 'page_'.$request->slug.'_1_mobile';
+        if(Cache::has($cacheName1)){
+            Cache::forget($cacheName1);
+        }
+        if(Cache::has($cacheName2)){
+            Cache::forget($cacheName2);
+        }
+        if(Cache::has($cacheName3)){
+            Cache::forget($cacheName3);
+        }
         return redirect()->route('admin.game.index')->with('success', 'Sửa thành công');
     }
 
@@ -243,10 +267,22 @@ class GameController extends Controller
     public function destroy($id)
     {
         $data = Game::find($id);
+        // Cache::flush();
+        $cacheName1 = 'page_'.$data->slug.'_1';
+        $cacheName2 = 'page_'.$data->slug.'_1_play';
+        $cacheName3 = 'page_'.$data->slug.'_1_mobile';
+        if(Cache::has($cacheName1)){
+            Cache::forget($cacheName1);
+        }
+        if(Cache::has($cacheName2)){
+            Cache::forget($cacheName2);
+        }
+        if(Cache::has($cacheName3)){
+            Cache::forget($cacheName3);
+        }
         $data->gametypes()->detach();
         $data->gametags()->detach();
         $data->delete();
-        Cache::flush();
         return redirect()->route('admin.game.index')->with('success', 'Xóa thành công');   
     }
 
