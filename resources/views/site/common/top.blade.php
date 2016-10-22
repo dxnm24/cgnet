@@ -8,7 +8,14 @@
 			</div>
 			<div class="small-9 columns">
 				<div class="logo">
-					<a href="/"><img src="/img/logo-mobile.png" alt="choigames.net" /></a>
+					<a href="/">
+						<span class="logo-color-1">CHOI</span>
+						<span class="logo-color-2">G</span>
+						<span class="logo-color-3">A</span>
+						<span class="logo-color-4">M</span>
+						<span class="logo-color-5">E</span>
+						<span class="logo-color-6">S</span>
+					</a>
 				</div>
 			</div>
 		</div>

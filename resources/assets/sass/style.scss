@@ -869,67 +869,87 @@ a.search-button:focus {
 .mobile-topbar {
 	text-align: center;
 	margin-top: 0.313rem;
-}
-a.mobile-menuopen {
-	display: block;
-	margin-top: 0.313rem;
-}
-a.mobile-menuopen i.fa {
-	color: #888;
-	font-size: 1.875rem;
-}
-.mobile-menubox {
-	
+	a.mobile-menuopen {
+		display: block;
+		margin-top: 0.313rem;
+		i.fa {
+			color: #888;
+			font-size: 1.875rem;
+		}
+	}
 }
 .mobile-menubox-head {
 	border-bottom: 1px solid #eee;
 	padding: 0.625rem;
-}
-strong.mobile-title {
-	font-size: 1rem;
-	color: #b35900;
-	text-transform: uppercase;
-}
-.mmh-left {
-	float: left;
-	width: 60%;
-}
-.mmh-right {
-	float: right;
-	width: 40%;
-	color: #333;
-	font-size: 0.875rem;
-	text-align: right;
+	strong.mobile-title {
+		font-size: 1rem;
+		color: #b35900;
+		text-transform: uppercase;
+	}
+	.mmh-left {
+		float: left;
+		width: 60%;
+	}
+	.mmh-right {
+		float: right;
+		width: 40%;
+		color: #333;
+		font-size: 0.875rem;
+		text-align: right;
+	}
 }
 ul.mobile-menu {
 	overflow-y: auto;
 	overflow-x: none;
 	padding: 0;
 	margin: 0;
+	li {
+		list-style: none;
+		a {
+			display: block;
+			padding: 0.625rem;
+			margin: 0;
+			border-bottom: 1px solid #eee;
+			font-size: 1rem;
+		}
+	}
+	li.mobile-li-close {
+		margin-top: 0.625rem;
+		a.mobile-menuclose {
+			display: block;
+			padding: 0.625rem;
+			background: #1993c6;
+			color: #fff;
+			font-size: 1rem;
+			font-weight: bold;
+			text-align: center;
+		}
+	}
 }
-ul.mobile-menu li {
-	list-style: none;
+.logo > a {
+	> span {
+		font-size: 1.50rem;
+		font-weight: bold;
+	}
+	> span.logo-color-1 {
+		color: #29b829;
+	}
+	> span.logo-color-2 {
+		color: #4b57cc;
+	}
+	> span.logo-color-3 {
+		color: #ed8a29;
+	}
+	> span.logo-color-4 {
+		color: #d6cc32;
+	}
+	> span.logo-color-5 {
+		color: #29b829;
+	}
+	> span.logo-color-6 {
+		color: #db2323;
+	}
 }
-ul.mobile-menu li a {
-	display: block;
-	padding: 0.625rem;
-	margin: 0;
-	border-bottom: 1px solid #eee;
-	font-size: 1rem;
-}
-li.mobile-li-close {
-	margin-top: 0.625rem;
-}
-a.mobile-menuclose {
-	display: block;
-	padding: 0.625rem;
-	background: #1993c6;
-	color: #fff;
-	font-size: 1rem;
-	font-weight: bold;
-	text-align: center;
-}
-
 
 // RESPONSIVE
 /* Small only */
