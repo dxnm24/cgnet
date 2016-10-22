@@ -27,7 +27,11 @@
 	</div>
 </header>
 <div class="full reveal mobile-menubox" id="mobile-menubox" data-reveal>
-	<strong class="mobile-title">Thể loại game</strong>
+	<div class="mobile-menubox-head">
+		<strong class="mobile-title mmh-left">Thể loại game</strong>
+		<a class="mmh-right" data-close aria-label="Close modal"><i class="fa fa-times" aria-hidden="true"></i> Đóng Menu</a>
+		<div class="clearfix"></div>
+	</div>
 	<ul class="mobile-menu">
   		@if($topmenu)
       		@foreach($topmenu as $key => $value)
