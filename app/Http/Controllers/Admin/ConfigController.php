@@ -98,16 +98,7 @@ class ConfigController extends Controller
                 // 'status' => $request->status,
                 // 'lang' => $request->lang,
             ]);
-        //cache name
-        $cacheName1 = 'index';
-        $cacheName2 = 'index_mobile';
-        if(Cache::has($cacheName1)) {
-            Cache::forget($cacheName1);
-        }
-        if(Cache::has($cacheName2)) {
-            Cache::forget($cacheName2);
-        }
-        //return
+        Cache::flush();
         return redirect()->route('admin.config.edit', $id)->with('success', 'Sửa thành công');
     }
 
