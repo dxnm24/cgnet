@@ -386,7 +386,6 @@ class SiteController extends Controller
         }
         $data = $data->where('start_date', '<=', date('Y-m-d H:i:s'))
             ->where('slug', 'like', '%'.$slug.'%')
-            // ->orWhere('name', 'like', '%'.$request->name.'%')
             ->whereNull('deleted_at')
             ->orderBy('start_date', 'desc')
             ->paginate(PAGINATE);
