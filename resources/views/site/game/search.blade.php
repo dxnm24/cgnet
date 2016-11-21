@@ -28,7 +28,7 @@
 	</div>
 	<div class="row column box-title">
 		<h1>{!! $title !!}</h1>
-		<p>Từ khóa: {!! $request->name !!}</p>
+		<p>Từ khóa: {{ $request->name }}</p>
 	</div>
 	@if(isset($data) && $data->total() > 0)
 		@include('site.game.box', array('data' => $data))
