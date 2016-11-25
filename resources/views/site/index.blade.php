@@ -32,13 +32,13 @@
 			<div class="box">
 				<div class="row column box-title no-padding-bottom">
 					<h3>{!! $value->name !!}</h3>
-					<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only hvr-icon-wobble-horizontal hvr-buzz-out" rel="nofollow">Xem thêm</a>
+					<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only hvr-icon-wobble-horizontal hvr-buzz-out">Xem thêm</a>
 				</div>
 				<div class="box-inner">
 				@include('site.game.box', array('data' => $value->games, 'type' => $value))
 				</div>
 				<div class="row column show-for-small-only box-seemore">
-					<a href="{{ $url }}" class="btn-seemore" rel="nofollow">Xem thêm <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+					<a href="{{ $url }}" class="btn-seemore">Xem thêm <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 			@else
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 				<div class="row column show-for-small-only box-seemore">
-					<a href="{{ $url }}" class="btn-seemore" rel="nofollow">Xem thêm <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+					<a href="{{ $url }}" class="btn-seemore">Xem thêm <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 			@endif
