@@ -2,6 +2,7 @@
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" dir="ltr">
 <head>
+	<title>@yield('title')</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,6 @@
 	<meta name="title" content="{!! $meta_title !!}">
 	<meta name="keywords" content="{!! $meta_keyword !!}">
 	<meta name="description" content="{!! $meta_description !!}">
-	
 	<meta property="og:url" content="{!! url()->current() !!}" />
 	<meta property="og:title" content="{!! $meta_title !!}" />
 	<meta property="og:description" content="{!! $meta_description !!}" />
@@ -25,9 +25,7 @@
 	@if(isset($isPlay))
 	<meta property="og:type" content="article" />
 	@endif
-
 	<meta property="fb:app_id" content="{!! FACEBOOK_APPID !!}" />
 	<link rel="icon" href="{!! url('img/favicon.png') !!}" type="image/x-icon">
-	<title>@yield('title')</title>
 	{!! GA !!}
 </head>

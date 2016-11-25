@@ -2,6 +2,7 @@
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" dir="ltr">
 <head>
+	<title>{!! $game->meta_title !!}</title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-language" content="vi">
 	<meta name="format-detection" content="telephone=no">
@@ -15,7 +16,6 @@
 	<meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" name="viewport">
 	<link rel="icon" href="{{ url('img/favicon.png') }}" type="image/x-icon">
-	<title>{!! $game->meta_title !!}</title>
 	{!! GA !!}
 	<link rel="stylesheet" type="text/css" href="{{ url('css/play.css') }}">
 	<script type="text/javascript" src="{{ url('js/jquery.min.js') }}"></script>
