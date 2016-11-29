@@ -253,6 +253,12 @@ class SiteController extends Controller
             } else {
                 $seriParent = null;
             }
+            //parent type of typeMain if exist
+            if($typeMain->parent_id > 0) {
+                $typeMainParent = $this->getPostTypeById($typeMain->parent_id);
+            } else {
+                $typeMainParent = null;
+            }
             //auto meta tag for seo
             if(empty($game->meta_title)) {
                 $game->meta_title = 'Game '.$game->name.' hấp dẫn | Chơi trò chơi '.$game->name.' online miễn phí';
@@ -304,6 +310,7 @@ class SiteController extends Controller
                     'related' => $related, 
                     'seri' => $seri, 
                     'seriParent' => $seriParent, 
+                    'typeMainParent' => $typeMainParent, 
                     'adCode' => $adCode,
                     'linkToPlayGame' => $linkToPlayGame
                 ])->render();
@@ -319,6 +326,7 @@ class SiteController extends Controller
                     'related' => $related, 
                     'seri' => $seri, 
                     'seriParent' => $seriParent, 
+                    'typeMainParent' => $typeMainParent, 
                     'adCode' => $adCode,
                     'linkToPlayGame' => $linkToPlayGame
                 ]);
