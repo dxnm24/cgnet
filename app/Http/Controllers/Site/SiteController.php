@@ -420,6 +420,20 @@ class SiteController extends Controller
         $content = view('site.sitemap');
         return response($content)->header('Content-Type', 'text/xml;charset=utf-8');
     }
+    public function listgames()
+    {
+        ///cache name
+        $cacheName = 'listgames';
+        //get cache
+        if(Cache::has($cacheName)) {
+            return Cache::get($cacheName);
+        }
+        //put cache
+        $html = view('site.listgames')->render();
+        Cache::forever($cacheName, $html);
+        //return view
+        return view('site.listgames');
+    }
     private function getGameTypeQuery($id, $ids)
     {
         $data = DB::table('games')
