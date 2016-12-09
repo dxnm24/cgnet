@@ -260,15 +260,15 @@ class SiteController extends Controller
                 $typeMainParent = null;
             }
             //auto meta tag for seo
+            $gameNameNoLatin = CommonMethod::convert_string_vi_to_en($game->name);
             if(empty($game->meta_title)) {
-                $game->meta_title = 'Game '.$game->name.' hấp dẫn | Chơi trò chơi '.$game->name.' online miễn phí';
+                // $game->meta_title = 'Game '.$game->name.' cực hấp dẫn | Chơi trò chơi '.$gameNameNoLatin.' online miễn phí';
+                $game->meta_title = 'Chơi game '.$game->name.' online miễn phí hấp dẫn';
             }
             if(empty($game->meta_keyword)) {
-                $gameNameNoLatin = CommonMethod::convert_string_vi_to_en($game->name);
                 $game->meta_keyword = $gameNameNoLatin.', '.$game->name.', game '.$game->name.', choi game '.$gameNameNoLatin.', tro choi '.$gameNameNoLatin.', game '.$game->name.' mới nhất';
             }
             if(empty($game->meta_description)) {
-                $gameNameNoLatin = CommonMethod::convert_string_vi_to_en($game->name);
                 $game->meta_description = 'Game '.$gameNameNoLatin.' hay nhat. Chơi '.$typeMain->name.' '.$game->name.' đặc biệt, mới lạ, hấp dẫn. Cùng chơi trò chơi '.$game->name.' cùng bạn bè để đua top và phá kỷ lục';
             }
             //ad preroll
