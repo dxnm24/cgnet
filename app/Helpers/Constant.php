@@ -42,3 +42,5 @@ define('GA', "");
 //   ga('send', 'pageview');
 
 // </script>
+//responsive filemanager
+define('AKEY', 'db0ac2431a2e87c54852dbb0e7b9ed3d');
