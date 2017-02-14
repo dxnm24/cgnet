@@ -80,6 +80,9 @@ class CommonOption
             6 => 'Preroll (QC trên khung chơi game)- Mobile',
             7 => 'Dưới menu phải - PC',
             8 => 'Dưới menu phải - Mobile',
+            9 => 'Dưới nội dung game - PC',
+            10 => 'Dưới nội dung game - Mobile',
+            11 => 'Dưới khung game - PC',
             
         );
     }

@@ -68,6 +68,7 @@
 			@include('site.game.fullscreen')
 		@endif
 	</div>
+	@include('site.common.ad', ['posPc' => 11])
 	@endif
 	<div class="row">
 		<div class="medium-9 small-12 columns">
@@ -88,6 +89,7 @@
 						</div>
 						@endif
 						<div class="column description">{!! $game->description !!}</div>
+						@include('site.common.ad', ['posPc' => 9, 'posMobile' => 10])
 					</div>
 				</div>
 
