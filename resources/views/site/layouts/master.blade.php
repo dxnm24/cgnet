@@ -24,7 +24,11 @@
 @endif
 
 @include('site.common.top')
+
+@if(!isset($isPlay) || $isPlay == false)
 @include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
+@endif
+
 <div class="main">
 	@if(isset($isPlay) && $isPlay == true)
 		<div class="row">
