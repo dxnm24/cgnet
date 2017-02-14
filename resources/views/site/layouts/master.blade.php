@@ -50,15 +50,5 @@
 @include('site.common.bottom')
 
 <script src="{{ asset('js/app.js') }}"></script>
-
-<!-- script -->
-<script type="text/javascript">
-    (sc_adv_out = window.sc_adv_out || []).push({
-        id : "273408",
-        domain : "n.ads1-adnow.com"
-    });
-</script>
-<script type="text/javascript" src="//st-n.ads1-adnow.com/js/adv_out.js"></script>
-
 </body>
 </html>
