@@ -13,6 +13,7 @@
 		$meta_image = '';
 	}
 	$extendData = array(
+			'isHome' => true,
 			'meta_title' => $meta_title,
 			'meta_keyword' => $meta_keyword,
 			'meta_description' => $meta_description,
