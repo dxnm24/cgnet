@@ -117,6 +117,9 @@
 				@include('site.game.related', ['data' => $related, 'gameData' => $gameRelated])
 
 			</div>
+
+			@include('site.common.ad', ['posPc' => 16])
+
 		</div>
 		<div class="medium-3 columns hide-for-small-only">
 			@include('site.common.side')

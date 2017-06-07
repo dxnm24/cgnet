@@ -47,6 +47,7 @@ class AdController extends Controller
             'name' => 'required|max:255',
             'position' => 'required',
             'code' => 'required',
+            'image' => 'max:255',
         ]);
         if($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -55,6 +56,7 @@ class AdController extends Controller
                 'name' => $request->name,
                 'position' => $request->position,
                 'code' => $request->code,
+                'image' => $request->image,
                 'status' => $request->status,
                 'lang' => $request->lang,
             ]);
@@ -99,6 +101,7 @@ class AdController extends Controller
             'name' => 'required|max:255',
             'position' => 'required',
             'code' => 'required',
+            'image' => 'max:255',
         ]);
         if($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -108,6 +111,7 @@ class AdController extends Controller
                 'name' => $request->name,
                 'position' => $request->position,
                 'code' => $request->code,
+                'image' => $request->image,
                 'status' => $request->status,
                 'lang' => $request->lang,
             ]);

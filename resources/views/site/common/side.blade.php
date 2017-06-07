@@ -1,3 +1,5 @@
+@include('site.common.ad', ['posPc' => 12, 'posMobile' => 13])
+
 @if($sidemenu)
 <ul class="menu vertical menu-side-pc">
 	@foreach($sidemenu as $key => $value)
@@ -5,3 +7,5 @@
 	@endforeach
 </ul>
 @endif
+
+@include('site.common.ad', ['posPc' => 7, 'posMobile' => 8])

@@ -40,5 +40,8 @@
 			<p>Không tìm thấy kết quả</p>
 		</div>
 	@endif
+
+	@include('site.common.ad', ['posPc' => 17])
+
 </div>
 @endsection

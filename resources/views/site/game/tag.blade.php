@@ -55,5 +55,8 @@
 	<div class="row column">
 		@include('site.common.paginate', ['paginator' => $data])
 	</div>
+
+	@include('site.common.ad', ['posPc' => 15])
+
 </div>
 @endsection

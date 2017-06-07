@@ -83,6 +83,14 @@ class CommonOption
             9 => 'Dưới nội dung game - PC',
             10 => 'Dưới nội dung game - Mobile',
             11 => 'Dưới khung game - PC',
+            12 => 'Trên menu phải - PC',
+            13 => 'Trên menu phải - Mobile',
+            14 => 'Dưới danh sách game trang thể loại - PC',
+            15 => 'Dưới danh sách game trang tag - PC',
+            16 => 'Dưới danh sách game trang chơi game - PC',
+            17 => 'Dưới danh sách game trang tìm kiếm - PC',
+            18 => 'QC trôi bên trái - PC',
+            19 => 'QC trôi bên phải - PC',
             
         );
     }

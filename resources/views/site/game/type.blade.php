@@ -69,5 +69,8 @@
 		@include('site.common.paginate', ['paginator' => $data])
 	</div>
 	@endif
+
+	@include('site.common.ad', ['posPc' => 14])
+	
 </div>
 @endsection
